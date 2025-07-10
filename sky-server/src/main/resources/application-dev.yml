@@ -10,6 +10,6 @@ sky:
     user-ttl: 1296000000
   alioss:
     endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id: LTAI5tNJd915nhw668pbVKqs
-    access-key-secret: 7DMeTQgihhUL089VR2oSnRDc14Ulpu
+    access-key-id: ${ALIBABA_CLOUD_ACCESS_KEY}
+    access-key-secret: ${ALIBABA_CLOUD_ACCESS_KEY_SECRET}
     bucket-name: zsj-static
