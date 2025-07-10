@@ -12,4 +12,4 @@ buildNumber.properties
 *.class
 *Test.java
 **/test/
-application-dev.yml
+**/application-dev.yml
