@@ -89,6 +89,11 @@ public class EmployeeController {
         return Result.success();
     }
 
+    /**
+     * 员工分页查询
+     * @param employeePageQueryDTO
+     * @return {@link Result }<{@link PageResult }>
+     */
     @GetMapping("/page")
     @ApiOperation("员工分页查询")
     public Result<PageResult> page(EmployeePageQueryDTO employeePageQueryDTO){
@@ -115,6 +120,11 @@ public class EmployeeController {
         return Result.success();
     }
 
+    /**
+     * 通过id查询员工
+     * @param id
+     * @return {@link Result }<{@link Employee }>
+     */
     @GetMapping("/{id}")
     @ApiOperation("通过id查询员工")
     public Result<Employee> getById(@PathVariable("id") Long id){
@@ -123,6 +133,11 @@ public class EmployeeController {
         return Result.success(employee);
     }
 
+    /**
+     * 修改员工
+     * @param employeeDTO
+     * @return {@link Result }
+     */
     @PutMapping
     @ApiOperation("修改员工")
     public Result update(@RequestBody EmployeeDTO employeeDTO){
