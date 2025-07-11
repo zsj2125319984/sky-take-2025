@@ -18,4 +18,63 @@
         </where>
         order by d.create_time desc
     </select>
+
+    <delete id="deleteByIds">
+        delete from dish where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="getByIdWithFlavor" resultMap="getByIdWithFlavor">
+        SELECT d.id,d.name,d.category_id,d.price,d.image,d.description,d.status,d.update_time,
+               df.id dfid,df.name dname,df.value
+        from dish d LEFT JOIN dish_flavor df ON d.id = df.dish_id where d.id = #{id}
+    </select>
+    <resultMap id="getByIdWithFlavor" type="com.sky.vo.DishVO">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="category_id" property="categoryId"/>
+        <result column="price" property="price"/>
+        <result column="image" property="image"/>
+        <result column="description" property="description"/>
+        <result column="status" property="status"/>
+        <result column="update_time" property="updateTime"/>
+        <collection property="flavors" ofType="dishFlavor">
+            <result column="dfid" property="id"/>
+            <result column="dname" property="name"/>
+            <result column="value" property="value"/>
+        </collection>
+    </resultMap>
+
+    <update id="update">
+        update dish
+        <set>
+            <if test="name != null">name = #{name},</if>
+            <if test="categoryId != null">category_id = #{categoryId},</if>
+            <if test="price != null">price = #{price},</if>
+            <if test="image != null">image = #{image},</if>
+            <if test="description != null">`description` = #{description},</if>
+            <if test="status != null">`status` = #{status},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="updateUser != null">update_user = #{updateUser},</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="list" resultType="dish">
+        select * from dish
+        <where>
+            <if test="name != null">
+                and name like concat('%',#{name},'%')
+            </if>
+            <if test="categoryId != null">
+                and category_id = #{categoryId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+        order by create_time desc
+    </select>
 </mapper>
