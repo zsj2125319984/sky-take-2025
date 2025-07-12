@@ -19,5 +19,5 @@ sky:
     password: ZSJSHISHEN233.
     database: 0
   wechat:
-    appid: wx6d76bf030e490165
-    secret: 268e6200356fa03e31509e07f308dc74
+    appid: appid
+    secret: secret
