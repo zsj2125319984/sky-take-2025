@@ -7,6 +7,7 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
@@ -21,7 +22,14 @@ public class Knife4jConfiguration {
      */
     @Bean
     public Docket docket1() {
-        ApiInfo apiInfo = new ApiInfoBuilder().title("苍穹外卖项目接口文档").version("2.0").description("苍穹外卖项目接口文档").build();
+        ApiInfo apiInfo = new ApiInfoBuilder()
+                .title("苍穹外卖项目接口文档")
+                .version("2.0")
+                .description("苍穹外卖项目接口文档")
+                .contact(new Contact("Sicecream",
+                        "",
+                        "zsj2125319984@qq.com"))
+                .build();
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo)
@@ -40,7 +48,14 @@ public class Knife4jConfiguration {
      */
     @Bean
     public Docket docket2() {
-        ApiInfo apiInfo = new ApiInfoBuilder().title("苍穹外卖项目接口文档").version("2.0").description("苍穹外卖项目接口文档").build();
+        ApiInfo apiInfo = new ApiInfoBuilder()
+                .title("苍穹外卖项目接口文档")
+                .version("2.0")
+                .description("苍穹外卖项目接口文档")
+                .contact(new Contact("Sicecream",
+                        "",
+                        "zsj2125319984@qq.com"))
+                .build();
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo)

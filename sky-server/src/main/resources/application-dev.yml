@@ -13,3 +13,11 @@ sky:
     access-key-id: ${ALIBABA_CLOUD_ACCESS_KEY}
     access-key-secret: ${ALIBABA_CLOUD_ACCESS_KEY_SECRET}
     bucket-name: zsj-static
+  redis:
+    host: localhost
+    port: 6379
+    password: ZSJSHISHEN233.
+    database: 0
+  wechat:
+    appid: wx6d76bf030e490165
+    secret: 268e6200356fa03e31509e07f308dc74
