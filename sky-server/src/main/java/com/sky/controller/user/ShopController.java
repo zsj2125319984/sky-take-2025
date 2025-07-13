@@ -26,6 +26,6 @@ public class ShopController {
                 .get(com.sky.controller.admin.ShopController.KEY);
         log.info("获取到的状态: {}",status == 1 ? "营业中" : "打烊中");
 
-        return Result.success();
+        return Result.success(status);
     }
 }
